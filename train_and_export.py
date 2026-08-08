@@ -30,22 +30,15 @@ if not DATA_PATH.exists():
 
 df = pd.read_csv(DATA_PATH)
 
-leakage_or_id_cols = [
+# Keep Country, State, City, Zip Code, Latitude, Longitude, Quarter, Satisfaction Score
+drop_cols = [
     "Customer ID",
     "Customer Status",
     "Churn Score",
     "Churn Category",
     "Churn Reason",
-    "Satisfaction Score",
-    "Country",
-    "State",
-    "Quarter",
-    "City",
-    "Zip Code",
-    "Latitude",
-    "Longitude",
 ]
-df = df.drop(columns=[c for c in leakage_or_id_cols if c in df.columns])
+df = df.drop(columns=[c for c in drop_cols if c in df.columns])
 for col in ["Offer", "Internet Type"]:
     if col in df.columns:
         df[col] = df[col].fillna("None")
