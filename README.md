@@ -82,7 +82,7 @@ streamlit run app.py
 
 >
 >
-> ``
+> `https://customer-churn-pediction-4vjhtu7vea7cgyns5ypjsn.streamlit.app/`
 
 ## How to reproduce training
 
